@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&family=Open+Sans:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a9171d7552.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Yash's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="first">
+            <div class="leftsection">
+                <div>
+                    Hey!!!<br> My name is <span class="name">Yash</span>
+                </div>
+                <div>
+                    And I am a
+                </div>
+                <span id="element"></span>
+            </div>
+            <div class="rightsection">
+                <img src="first.png" alt="img">
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="about" class="second">
+            <h1>
+                About Myself
+                <span class="bio">(Know More About Me)</span>
+            </h1>
+            <div class="about">
+                <div class="leftside2">
+                    <img src="second.png" alt="img">
+                </div>
+                <div class="myself">
+                    <p>
+                        I am Yash, currently pursuing my Btech in Computer Science from Netaji Subash University of Technology. I am a passionate and versatile individual with a deep love for design and technology.  I am a beginner in web development, eager to learn and grow in this exciting field. With a passion for creating beautiful and functional websites, I am constantly honing my skills and exploring new technologies. From HTML and CSS to JavaScript. 
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Front-end Web Developement</span></li>
+                        <li><span>Basic Web Designing</span></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>No work Experience till now.</span></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022</span> <br>Senior Secondary Education</li>
+                        <li><span>2022 - 2026 (Current)</span><br>BTech from NSUT,Delhi</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="contact" class="third">
+            <h1>
+                Contact Me
+            </h1>
+            <div class="container">
+                <div class="contact-left"> 
+                    <p><i class="fa-sharp fa-solid fa-envelope"></i><span>GMail : </span>yash-ug22@nsut.ac.in</p>
+                    <p><i class="fa-solid fa-phone"></i><span>Contact no. : </span>8076640017</p>
+                </div>
+                <div class="contact-right">
+                    <form action="https://formspree.io/f/xrgvngke" method="post">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy; Yash's Portfolio | All Rights Reserved</p>
+            </div>
+            
+            
+        </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['College Student', '&amp; Web Developer.'],
+            typeSpeed: 55,
+        });
+
+        var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents = document.getElementsByClassName("tab-contents")
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+</body>
+
+</html>
