@@ -77,7 +77,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 15px 48px 15px 48px;
+    margin: 25px 48px 25px 48px;
     flex-wrap: wrap;
 
 }
