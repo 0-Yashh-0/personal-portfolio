@@ -31,13 +31,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Build static content
+        run: |
+          npm install
+          npm run build
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload the build output directory (adjust if your build output folder is different)
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
